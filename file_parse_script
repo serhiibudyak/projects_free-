@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+read -e -p "enter file path: " var_path
+
+ls --ignore="*TEST*" --ignore="*Test*" --ignore="*test*" $var_path | wc | awk '{print $1}'
+grep -L "build" $var_path/* | wc | awk '{print $1}'
